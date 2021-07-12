@@ -1,6 +1,6 @@
 <template>
   <div id="page-box">
-    <img src="http://127.0.0.1:8000/upload/a.jpg" alt="" />
+    <img src="http://127.0.0.1:9000/upload/a.jpg" alt="" />
     <h1>123456456</h1>
   </div>
 </template>
@@ -19,8 +19,8 @@ export default{
   methods:{
     getData(){
       axios({
-        method:'post',
-        url: 'http://127.0.0.1:8000/api'
+        method:'get',
+        url: 'http://127.0.0.1:9000/api/'
        
       }).then((res)=>{
         console.log(res)

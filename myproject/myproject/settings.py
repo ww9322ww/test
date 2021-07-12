@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'myapp',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -122,3 +124,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL='/upload/' #用户的文件上传文件夹。 所谓的用户的行为
 MEDIA_ROOT = BASE_DIR / 'upload' #给路由定义路径。   注意名字不要写错
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:9000",
+    "http://127.0.0.1:8080",
+    "http://localhost:8080",
+]
